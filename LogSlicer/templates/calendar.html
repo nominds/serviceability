@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ICI - Log analyser</title>
+  <script type=text/javascript src="{{
+  url_for('static', filename='jquery.js') }}"></script>
+  <script type=text/javascript src="{{
+  url_for('static', filename='jquery-ui.min.js') }}"></script>
+  <link rel="stylesheet" href="/static/jquery-ui.min.css"/>
+  <script type=text/javascript src="{{
+  url_for('static', filename='jquery-ui-timepicker-addon.js') }}"></script>
+  <link rel="stylesheet" href="/static/jquery-ui-timepicker-addon.css"/>
+ 
+  <script>
+	$(function() {
+    $( "#stDate" ).datepicker();
+	$( "#stTime" ).timepicker();
+	$( "#edDate" ).datepicker();
+	$( "#edTime" ).timepicker();
+  });
+  </script>
+  
+</head>
+<body>
+
+<form action="calendar"> 
+<p>Select auditlog filepath: <input type="text" id="logFile" name="logFileLoc">
+</p>
+
+
+<p>Select start datetime: <input type="text" id="stDate" name="startDate">
+     <input type="text" id="stTime" name="startTime">
+</p>
+
+<p>Select end datetime: <input type="text" id="edDate" name="endDate">
+    <input type="text" id="edTime" name="endTime"></p>
+ 
+ <input type="submit" value="Submit">
+</form> 
+</body>
+</html>
